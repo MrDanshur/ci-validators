@@ -6,8 +6,8 @@ use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\Common\Annotations\Reader;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\Table;
-use InternalSite\CoreBundle\Validator\AbstractEntityValidator;
-use InternalSite\CoreBundle\Validator\ValidatorCollection;
+use IS\CIValidatorsBundle\Validator\AbstractEntityValidator;
+use IS\CIValidatorsBundle\Validator\ValidatorCollection;
 
 class SchemaValidateProcessor
 {
