@@ -1,0 +1,12 @@
+rules:
+        - "EntityColumnsValidator"
+        - "EntityTableValidator"
+        - "EntityIndexesValidator"
+        - "EntityUniqueIndexesValidator"
+        - "EntityPrefixValidator"
+excludes_analyse:
+    entities:
+#        - Itsm\CoreBundle\Entity\BaseUser
+    rules:
+        EntityColumnsValidator:
+#            - Itsm\CoreBundle\Entity\AuditLog

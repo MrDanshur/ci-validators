@@ -1,0 +1,23 @@
+{
+    "name": "IS/ci-validators",
+    "description": "IS Continious Integration Validators",
+    "keywords": ["entity", "internalsite", "IS", "GDB"],
+    "type": "symfony-bundle",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mr danshur",
+            "email": "danshur@yandex.ru"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.5",
+        "php": ">=7.1",
+        "symfony/doctrine-bridge": "~4.0",
+        "symfony/framework-bundle": "~3.0",
+        "symfony/yaml": "^4.1"
+    },
+    "autoload": {
+        "psr-4": { "IS\\CIValidators\\": "" }
+    }
+}

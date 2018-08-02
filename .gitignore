@@ -1,0 +1,13 @@
+# projects files
+.idea
+nbproject
+.buildpath
+.project
+.settings
+
+# Windows Thumbnail cache Mac DS_Store Files
+Thumbs.db
+.DS_Store
+
+vendor
+composer.lock

@@ -1,0 +1,17 @@
+services:
+    _defaults:
+        public: false
+        autowire: true
+        autoconfigure: true
+
+    IS\CIValidatorsBundle\Validator\AbstractEntityValidator:
+        tags:
+            - { name: validator.entity_validator }
+
+    IS\CIValidatorsBundle\Validator\EntityTableValidator: ~
+    IS\CIValidatorsBundle\Validator\EntityPrefixValidator: ~
+    IS\CIValidatorsBundle\Validator\EntityColumnsValidator: ~
+    IS\CIValidatorsBundle\Validator\EntityIndexesValidator: ~
+    IS\CIValidatorsBundle\Validator\EntityUniqueIndexesValidator: ~
+    IS\CIValidatorsBundle\Validator\ValidatorCollection: ~
+    IS\CIValidatorsBundle\Component\SchemaValidateProcessor: ~
