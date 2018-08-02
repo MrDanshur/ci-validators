@@ -1,5 +1,5 @@
 {
-    "name": "IS/ci-validators",
+    "name": "is/ci-validators",
     "description": "IS Continious Integration Validators",
     "keywords": ["entity", "internalsite", "IS", "GDB"],
     "type": "symfony-bundle",
