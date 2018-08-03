@@ -13,9 +13,9 @@
     "require": {
         "doctrine/orm": "^2.6",
         "php": ">=7.1",
-        "symfony/framework-bundle": "~3.0",
         "symfony/yaml": "~3.0|~4.0",
-        "doctrine/doctrine-bundle": "^1.8"
+        "doctrine/doctrine-bundle": "^1.8",
+        "symfony/console": "^4.1"
     },
     "autoload": {
         "psr-4": { "IS\\CIValidatorsBundle\\": "" }

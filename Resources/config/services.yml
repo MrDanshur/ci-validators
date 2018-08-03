@@ -10,10 +10,6 @@ services:
         tags:
             - { name: validator.entity_validator }
 
-    IS\CIValidatorsBundle\Command\SchemaPolicyValidateCommand:
-        tags:
-            - { name: console.command }
-
     IS\CIValidatorsBundle\Validator\EntityTableValidator: ~
     IS\CIValidatorsBundle\Validator\EntityPrefixValidator: ~
     IS\CIValidatorsBundle\Validator\EntityColumnsValidator: ~
