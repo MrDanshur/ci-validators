@@ -3,7 +3,7 @@
 namespace IS\CIValidatorsBundle\Command;
 
 use IS\CIValidatorsBundle\Component\SchemaValidateProcessor;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,10 +12,13 @@ use Symfony\Component\Yaml\Parser;
 /**
  * Class SchemaPolicyValidateCommand
  */
-class SchemaPolicyValidateCommand extends ContainerAwareCommand
+class SchemaPolicyValidateCommand extends Command
 {
     /** @var SchemaValidateProcessor */
     private $processor;
+
+    /** @var string */
+    private $rootDir;
 
     public const CONFIG_FILE_NAME = 'entity_rules.yml';
 
@@ -23,11 +26,14 @@ class SchemaPolicyValidateCommand extends ContainerAwareCommand
      * SchemaPolicyValidateCommand constructor.
      *
      * @param SchemaValidateProcessor $processor
+     * @param string                  $rootDir
      */
     public function __construct(
-        SchemaValidateProcessor $processor
+        SchemaValidateProcessor $processor,
+        string $rootDir
     ) {
         $this->processor = $processor;
+        $this->rootDir   = $rootDir;
 
         parent::__construct();
     }
@@ -46,7 +52,7 @@ class SchemaPolicyValidateCommand extends ContainerAwareCommand
             return 1;
         }
 
-        $path = $this->getContainer()->getParameter('kernel.project_dir') . DIRECTORY_SEPARATOR . $this::CONFIG_FILE_NAME;
+        $path = $this->rootDir . DIRECTORY_SEPARATOR . $this::CONFIG_FILE_NAME;
 
         if (!\file_exists($path)) {
             $output->writeln('Configuration file doesn\'t exist');

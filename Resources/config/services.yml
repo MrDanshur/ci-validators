@@ -3,18 +3,16 @@ services:
         public: false
         autowire: true
         autoconfigure: true
-
-    _instanceof:
-        Symfony\Component\DependencyInjection\ContainerAwareInterface:
-            calls:
-                - [setContainer, ["@service_container"]]
+        bind:
+            $rootDir: "%kernel.project_dir%"
 
     IS\CIValidatorsBundle\Validator\AbstractEntityValidator:
         tags:
             - { name: validator.entity_validator }
 
-    IS\CIValidatorsBundle\:
-        resource: '../../{Controller,Command,Component/GlobalDbAPI}'
+    IS\CIValidatorsBundle\Command\SchemaPolicyValidateCommand:
+        tags:
+            - { name: console.command }
 
     IS\CIValidatorsBundle\Validator\EntityTableValidator: ~
     IS\CIValidatorsBundle\Validator\EntityPrefixValidator: ~
