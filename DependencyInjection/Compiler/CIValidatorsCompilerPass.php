@@ -1,6 +1,6 @@
 <?php
 
-namespace InternalSite\CoreBundle\DependencyInjection\Compiler;
+namespace IS\CIValidatorsBundle\DependencyInjection\Compiler;
 
 use IS\CIValidatorsBundle\Validator\ValidatorCollection;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

@@ -4,9 +4,17 @@ services:
         autowire: true
         autoconfigure: true
 
+    _instanceof:
+        Symfony\Component\DependencyInjection\ContainerAwareInterface:
+            calls:
+                - [setContainer, ["@service_container"]]
+
     IS\CIValidatorsBundle\Validator\AbstractEntityValidator:
         tags:
             - { name: validator.entity_validator }
+
+    IS\CIValidatorsBundle\:
+        resource: '../../{Controller,Command,Component/GlobalDbAPI}'
 
     IS\CIValidatorsBundle\Validator\EntityTableValidator: ~
     IS\CIValidatorsBundle\Validator\EntityPrefixValidator: ~

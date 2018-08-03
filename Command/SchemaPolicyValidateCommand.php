@@ -1,6 +1,6 @@
 <?php
 
-namespace InternalSite\CoreBundle\Command;
+namespace IS\CIValidatorsBundle\Command;
 
 use IS\CIValidatorsBundle\Component\SchemaValidateProcessor;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
@@ -34,7 +34,7 @@ class SchemaPolicyValidateCommand extends ContainerAwareCommand
 
     protected function configure()
     {
-        $this->setName('internal:validate:schema')
+        $this->setName('internal:civalidate:schema')
             ->addOption('em', null, InputOption::VALUE_REQUIRED, 'Entity Manager id');
     }
 
