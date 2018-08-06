@@ -6,9 +6,10 @@ services:
         bind:
             $rootDir: "%kernel.project_dir%"
 
-    IS\CIValidatorsBundle\Validator\AbstractEntityValidator:
-        tags:
-            - { name: validator.entity_validator }
+    _instanceof:
+        IS\CIValidatorsBundle\Validator\AbstractEntityValidator:
+            tags:
+                - { name: validator.entity_validator }
 
     IS\CIValidatorsBundle\Validator\EntityTableValidator: ~
     IS\CIValidatorsBundle\Validator\EntityPrefixValidator: ~
