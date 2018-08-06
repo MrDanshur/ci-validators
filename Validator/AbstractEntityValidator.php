@@ -34,8 +34,6 @@ abstract class AbstractEntityValidator
     }
 
     /**
-     * Get classname of Validator.
-     *
      * @return null|mixed|string|string[]
      */
     public function getName()
