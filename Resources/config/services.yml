@@ -3,13 +3,15 @@ services:
         public: false
         autowire: true
         autoconfigure: true
-        bind:
-            $rootDir: "%kernel.project_dir%"
 
     _instanceof:
         IS\CIValidatorsBundle\Validator\AbstractEntityValidator:
             tags:
                 - { name: validator.entity_validator }
+
+    IS\CIValidatorsBundle\Command\SchemaPolicyValidateCommand:
+        arguments:
+            $rootDir: '%kernel.project_dir%'
 
     IS\CIValidatorsBundle\Validator\EntityTableValidator: ~
     IS\CIValidatorsBundle\Validator\EntityPrefixValidator: ~
