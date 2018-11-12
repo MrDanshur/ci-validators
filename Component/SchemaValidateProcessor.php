@@ -2,16 +2,16 @@
 
 namespace IS\CIValidatorsBundle\Component;
 
-use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\Common\Annotations\Reader;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\Table;
 use IS\CIValidatorsBundle\Validator\AbstractEntityValidator;
 use IS\CIValidatorsBundle\Validator\ValidatorCollection;
+use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class SchemaValidateProcessor
 {
-    /** @var Registry */
+    /** @var RegistryInterface */
     private $doctrine;
 
     /** @var Reader */
@@ -23,11 +23,11 @@ class SchemaValidateProcessor
     /**
      * SchemaValidateProcessor constructor.
      *
-     * @param Registry            $doctrine
+     * @param RegistryInterface   $doctrine
      * @param Reader              $reader
      * @param ValidatorCollection $validatorCollection
      */
-    public function __construct(Registry $doctrine, Reader $reader, ValidatorCollection $validatorCollection)
+    public function __construct(RegistryInterface $doctrine, Reader $reader, ValidatorCollection $validatorCollection)
     {
         $this->doctrine   = $doctrine;
         $this->reader     = $reader;
